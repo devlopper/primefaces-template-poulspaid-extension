@@ -1,0 +1,81 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui" xmlns:pa="http://primefaces.org/atlantis">
+
+  <!-- ========== Menu de l'application ========== -->
+  <div class="app-menu navbar-menu">
+    <!-- LOGO -->
+    <div class="navbar-brand-box">
+      <!-- Logo Sombre -->
+      <a href="index.html" class="logo logo-dark"> <span class="logo-sm"> <p:graphicImage
+            name="assets/images/logo-light.png" alt="" height="22" library="atlantis-layout" />
+      </span> <span class="logo-lg"> <p:graphicImage name="assets/images/logo-dark.png" alt=""
+            height="47" library="atlantis-layout" />
+      </span>
+      </a>
+      <!-- Logo Clair -->
+      <a href="index.html" class="logo logo-light"> <span class="logo-sm"> <p:graphicImage
+            name="assets/images/logo-light.png" alt="" height="22" library="atlantis-layout" />
+      </span> <span class="logo-lg"> <p:graphicImage name="assets/images/logo-light.png" alt=""
+            height="47" library="atlantis-layout" />
+      </span>
+      </a>
+      <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+        id="vertical-hover">
+        <i class="ri-record-circle-line"></i>
+      </button>
+    </div>
+
+    <div class="dropdown sidebar-user m-1 rounded">
+      <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="d-flex align-items-center gap-2">
+          <p:graphicImage class="rounded header-profile-user" name="assets/images/users/avatar-1.jpg" alt="Avatar de l'entête" library="atlantis-layout" />
+            <span class="text-start"> <span class="d-block fw-medium sidebar-user-name-text">#{userSession.user.names}</span>
+            <span class="d-block fs-14 sidebar-user-name-sub-text"><i class="bx bx-user fs-10 text-success align-baseline"></i> <span class="align-middle">rôle</span></span>
+        </span>
+        </span>
+      </button>
+      <div class="dropdown-menu dropdown-menu-end">
+        <!-- élément -->
+        <h6 class="dropdown-header">Bienvenue #{userSession.user.names} !</h6>
+        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profil</span></a>
+          
+        <a class="dropdown-item" href="#"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+        <a class="dropdown-item" href="#"><i class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Tableau des tâches</span></a>
+        <a class="dropdown-item" href="#"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Aide</span></a>
+        
+        <div class="dropdown-divider"></div>
+        <!-- <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-success-subtle text-success mt-1 float-end">Nouveau</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Paramètres</span></a>
+        <a class="dropdown-item" href="auth-lockscreen-basic.html"><i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Écran de verrouillage</span></a>
+        <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Se déconnecter</span></a> -->
+
+        <h:form>
+          <p:commandLink action="#{userSession.logout}" styleClass="dropdown-item">
+            <i class="mdi mdi-logout text-muted fs-16 align-middle me-1" />
+            <span class="align-middle" data-key="t-logout">Se déconnecter</span>
+          </p:commandLink>
+        </h:form>
+
+      </div>
+    </div>
+    <div id="scrollbar">
+      <div class="container-fluid">
+
+
+        <div id="two-column-menu"></div>
+        <ul class="navbar-nav" id="navbar-nav">
+          <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+          <ui:insert name="menu-items">
+            <h1>ÉLÉMENTS</h1>
+          </ui:insert>
+        </ul>
+      </div>
+      <!-- Barre latérale -->
+    </div>
+
+    <div class="sidebar-background"></div>
+  </div>
+  <!-- Fin de la barre latérale gauche -->
+
+</ui:composition>

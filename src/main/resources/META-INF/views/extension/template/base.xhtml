@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui" template="container.xhtml">
+
+  <ui:define name="container-body-content">
+    <div id="layout-wrapper">
+      <ui:decorate template="topbar.xhtml" />
+      <ui:decorate template="menu.xhtml" />
+
+      <!-- Page Body Start-->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="w-100">
+              <ui:insert name="content" />
+            </div>
+          </div>
+          <!-- container-fluid -->
+        </div>
+      </div>
+    </div>
+  </ui:define>
+</ui:composition>

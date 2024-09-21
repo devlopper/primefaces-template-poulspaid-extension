@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui" lang="en" data-layout="semibox" data-topbar="light"
+  data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable"
+  data-theme="saas" data-theme-colors="default" data-sidebar-visibility="show"
+  data-layout-style="default" data-bs-theme="light" data-layout-width="fluid"
+  data-layout-position="fixed" data-body-image="none" data-sidebar-user-show="">
+
+<h:head>
+  <f:facet name="first">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  </f:facet>
+  <title><ui:insert name="title">TITRE_DE_LA_PAGE</ui:insert></title>
+  <!-- CSS -->
+  <link rel="shortcut icon"
+    href="#{request.contextPath}/resources/atlantis-layout/assets/images/favicon.ico" />
+  <link type="text/css" rel="stylesheet"
+    href="#{request.contextPath}/resources/atlantis-layout/assets/css/icons.min.css" />
+  <link type="text/css" rel="stylesheet"
+    href="#{request.contextPath}/resources/assets/local/css/local.css" />
+  <!-- <link type="text/css" rel="stylesheet"
+    href="https://devlopper.github.io/dgbf-ui-theme-01/global-import.css" /> -->
+
+  <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/assets/global/global-import.css" />
+
+
+  <ui:insert name="head" />
+</h:head>
+
+<h:body>
+  <ui:insert name="container-body-content" />
+
+  <ui:include src="/extension/confirmation.xhtml" />
+
+  <ui:include src="/extension/growlMessage.xhtml" />
+
+  <ui:include src="/extension/workInProgress.xhtml" />
+
+  <!-- primeface js -->
+  <h:outputScript name="/js/layout.js" library="atlantis-layout" />
+  <h:outputScript name="/js/prism.js" library="atlantis-layout" />
+
+  <h:outputScript name="assets/js/layout.js" library="atlantis-layout" />
+
+  <!-- JAVASCRIPT -->
+  <h:outputScript name="assets/libs/bootstrap/js/bootstrap.bundle.min.js" library="atlantis-layout" />
+  <h:outputScript name="assets/libs/simplebar/simplebar.min.js" library="atlantis-layout" />
+  <h:outputScript name="assets/libs/node-waves/waves.min.js" library="atlantis-layout" />
+  <h:outputScript name="assets/libs/feather-icons/feather.min.js" library="atlantis-layout" />
+  <h:outputScript name="assets/js/pages/plugins/lord-icon-2.1.0.js" library="atlantis-layout" />
+
+  <ui:insert name="body-javascript" />
+
+  <!-- App js -->
+  <h:outputScript name="assets/js/app.js" library="atlantis-layout" />
+</h:body>
+
+</html>
